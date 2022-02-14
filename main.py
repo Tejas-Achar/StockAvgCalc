@@ -18,6 +18,11 @@ def calcReqUnits():
     Req_Units = math.ceil(((NOS*AVS) - (NOS*TA))/(TA-CMV))
     money = Req_Units*CMV
     result = {"url":"You will have to buy "+str(Req_Units)+ " units, which will cost you : "+str(money)}
+    
+    if result == {"url":"You will have to buy 0 units, which will cost you : 0"}:
+        result = {"url":"Please Provide Valid Input"}
+    
+    
     return result
 
 
