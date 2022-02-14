@@ -15,7 +15,7 @@ def calcReqUnits():
     AVS = int(reqobj["AVS"])
     CMV = int(reqobj["CMV"])
     TA = int(reqobj["TA"])
-    Req_Units = ((NOS*AVS) - (NOS*TA))/(TA-CMV)
+    Req_Units = math.ceil(((NOS*AVS) - (NOS*TA))/(TA-CMV))
     result = {"url":str(Req_Units)}
     return result
 
