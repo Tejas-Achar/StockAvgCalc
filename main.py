@@ -11,10 +11,10 @@ app = Flask(__name__)
 def calcReqUnits():
 
     reqobj = request.get_json()
-    NOS = reqobj["NOS"]
-    AVS = reqobj["AVS"]
-    CMV = reqobj["CMV"]
-    TA = reqobj["TA"]
+    NOS = int(reqobj["NOS"])
+    AVS = int(reqobj["AVS"])
+    CMV = int(reqobj["CMV"])
+    TA = int(reqobj["TA"])
     Req_Units = ((NOS*AVS) - (NOS*TA))/(TA-CMV)
     result = {"url":str(Req_Units)}
     return result
